@@ -12,6 +12,7 @@ import sys
 import time
 import traceback
 
+# these imports are resolved via cached py bytecode
 import updateWorkspaceFile as workspaceFile
 import updateLaunchConfig as launch
 import updateTasks as tasks

@@ -18,7 +18,8 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "../Inc/main.h"
+#include "main.h"
+// test
 #include "usart.h"
 #include "gpio.h"
 
