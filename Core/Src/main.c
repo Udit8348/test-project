@@ -19,9 +19,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-// test
 #include "usart.h"
 #include "gpio.h"
+#include <stdio.h>
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -97,6 +98,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+    HAL_Delay(750);
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+    HAL_Delay(750);
+    printf("Udit was here");
 
     /* USER CODE BEGIN 3 */
   }
