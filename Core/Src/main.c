@@ -108,6 +108,9 @@ int main(void)
 
     on_time += 100;
 
+    // how to see print statements?
+    printf("Udit was here.");
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
