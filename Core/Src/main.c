@@ -76,6 +76,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  uint32_t on_time = 100;
+  uint32_t off_time = 100;
 
   /* USER CODE END Init */
 
@@ -95,13 +97,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  
   while (1)
   {
     /* USER CODE END WHILE */
     HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-    HAL_Delay(500);
+    HAL_Delay(on_time);
     HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-    HAL_Delay(500);
+    HAL_Delay(off_time);
+
+    on_time += 100;
 
     /* USER CODE BEGIN 3 */
   }
