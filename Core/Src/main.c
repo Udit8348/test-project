@@ -21,9 +21,6 @@
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
-#include <stdio.h>
-
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -101,15 +98,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-    HAL_Delay(on_time);
-    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-    HAL_Delay(off_time);
-
+    blink(on_time, off_time);
+    // printf(on_time);
     on_time += 100;
 
     // how to see print statements?
-    printf("Udit was here.");
 
     /* USER CODE BEGIN 3 */
   }
@@ -155,6 +148,15 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+void blink(uint32_t on, uint32_t off) {
+  // HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+  // HAL_Delay(on);
+  // HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+  // HAL_Delay(off);
+
+  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+  HAL_Delay(1000);
+}
 /* USER CODE END 4 */
 
 /**

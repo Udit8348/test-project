@@ -52,6 +52,7 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
+void blink(uint32_t on, uint32_t off);
 
 /* USER CODE BEGIN EFP */
 
