@@ -73,8 +73,6 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  uint32_t on_time = 100;
-  uint32_t off_time = 100;
 
   /* USER CODE END Init */
 
@@ -98,9 +96,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    blink(on_time, off_time);
-    // printf(on_time);
-    on_time += 100;
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+    HAL_Delay(1000);
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+    HAL_Delay(1000);
 
     // how to see print statements?
 
@@ -155,7 +154,7 @@ void blink(uint32_t on, uint32_t off) {
   // HAL_Delay(off);
 
   HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-  HAL_Delay(1000);
+  HAL_Delay(750);
 }
 /* USER CODE END 4 */
 
